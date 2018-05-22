@@ -1,0 +1,8 @@
+.edit-update {
+    display: none;
+}
+
+label.error {
+    display: block;
+    color: #f00;
+}

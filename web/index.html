@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>contact demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/main.css" />
+    
+</head>
+
+<body>
+    <div class="container" >
+        <div>
+            <form id="addForm" action="" method="post" style="display:none;">
+                <div class="form-group">
+                    <label for="contactName">name</label>
+                    <input id="contactName" type="text" placeholder="name" class="form-control" required><br>
+                <div class="form-group">
+                    <label for="email">email</label>
+                    <input id="email" type="email" placeholder="email" class="form-control" required><br><span class = "error" style="color:red;font-weight:bold;"></span>
+                </div>
+                <div class="form-group">
+                    <label for="mobile">mobile</label>
+                    <input id="mobile" type="text" placeholder="mobile" class="form-control" required><br><span class = "error1" style="color:red;font-weight:bold;"></span>
+                </div>
+                <input id="add" class="btn btn-primary" type="button" value="submit">
+            </form>
+        </div>
+        <hr>
+        <div>
+            <table id="contactList" class="table" style="display:none;">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>name</th>
+                        <th>email</th>
+                        <th>mobile</th>
+                    </tr>
+                    <script id="entry-template" type="text/x-handlebars-template">
+                        {{#each response}}
+                        <tr id='myTableRow'>
+                            <td class='edit'>
+                                <input id='update' class='btn btn-info update' type='button' value='update' onclick='updateRow(this)'>&nbsp;
+                                <input id='delete' class='btn btn-danger delete' type='button' value='delete' onclick='deleteRow(this)'>
+                                <input type='hidden' id='id' value='{{id}}'>
+                            </td>
+                            <td>{{name}}</td>
+                            <td>{{email}}</td>
+                            <td>{{mobile}}</td>
+                        </tr>
+                        {{/each}}
+                    </script>
+                </thead>
+
+            </table>
+        </div>
+        <script src="../lib/handlebars-v4.0.11.js"></script>
+        <script src="../lib/jquery.min.js"></script>
+        <script src="../lib/jquery.validate.min.js"></script>
+        <script src="main.js"></script>
+
+    </div>
+</body>
+
+</html>
